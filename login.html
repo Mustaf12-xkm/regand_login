@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+
+    <style>
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .signUP {
+        max-width: 500px;
+        width: 100%;
+        background-color: rgb(247, 251, 251);
+        padding: 10px;
+        box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
+      }
+      form {
+        padding: 20px;
+        /* width: 100%; */
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      input {
+        border-radius: 3px;
+        border: 1px solid grey;
+        padding: 15px 10px;
+        width: 100%;
+        outline: none;
+      }
+      ::placeholder {
+        font-size: 16px;
+      }
+      h2 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+      }
+      span {
+        color: rgb(194, 8, 8);
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .submit {
+        width: 100%;
+        height: 60px;
+        background-color: aqua;
+        padding: 6px;
+        border: none;
+        border-radius: 3px;
+        margin: 10px 0;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signUP">
+        <h2>Sign in</h2>
+        <form>
+          <label>Email</label>
+          <input type="text" class="email" placeholder="Enter Email" />
+
+          <label>password</label>
+          <input
+            type="text"
+            class="password"
+            placeholder="Enter your password"
+          />
+          <button class="submit" type="submit">Submit</button>
+          <p>I don't have an account <span>sign UP</span></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const email = document.querySelector(".email");
+      const password = document.querySelector(".password");
+      const submitbtn = document.querySelector(".submit");
+
+      submitbtn.addEventListener("click", function (e) {
+        e.preventDefault()
+        if (email.value == "" || password.value == "") {
+          alert("Please enter email and password");
+        } else {
+          let data=[]
+          data= JSON.parse( localStorage.getItem("jsondata"))?JSON.parse(localStorage.getItem("jsondata")) :[]
+
+          if(data.some((f)=>{
+           return f.email==email.value && f.password==password.value
+          })){
+            alert ("login successfull")
+            let currentUser=data.filter((current)=>{
+              return current.email==email.value && current.password==password.value
+            })[0];
+
+        
+
+            localStorage.setItem('currentUser',currentUser.fullname );
+            window.location.href="createPost.html"
+          }else{
+            alert ("login failed")
+          }
+     
+
+
+
+      
+        }
+      });
+    </script>
+  </body>
+</html>
