@@ -1,147 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create post</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&family=Roboto&display=swap');
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        .container{
-            width: 100%;
-      
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: 'Poppins', sans-serif;
-            
-        }
-        .create-post{
-            background-color: rgb(247, 251, 251);
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&family=Roboto&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Poppins", sans-serif;
+      }
+      .create-post {
+        background-color: rgb(247, 251, 251);
         padding: 10px;
         box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
-        }
-        form{
-            display: flex;
-            flex-direction: column;
-             gap: 20px; 
-   
-            padding: 10px; 
-            width: 500px;
-    
-        }
-        input, textarea{
-            border-radius: 5px;
-            padding: 5px;
-            font-size: 20px;
-            border: 1px solid gray;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-        }
-        textarea{
-            height: 200px;
-            padding: 10px;
-        }
-        h3{
-         text-align: center;
-         padding: 20px 0;
-        }
-        .posts .boxes .post img{
-            height: 300px;
-            width: 100%;
-            object-fit: cover;
-            background-color: blue;
-        }
-        .posts{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            /* background: red; */
-        }
-        .posts .h2p{
-            text-align: center;
-            padding: 20px 0;
-            font-size: 30px;
-        }
-        .boxes{
-            display: flex;
-            gap: 100px;
-        }
-        .posts .post{
-            max-width: 500px;
-            width: 100%;
-
-        }
-       .post h2{
+        padding: 10px;
+        width: 500px;
+      }
+      input,
+      textarea {
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 20px;
+        border: 1px solid gray;
+      }
+      textarea {
+        height: 200px;
+        padding: 10px;
+      }
+      h3 {
+        text-align: center;
+        padding: 20px 0;
+      }
+      .posts .boxes .post img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        background-color: blue;
+      }
+      .posts {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        /* background: red; */
+      }
+      .posts .h2p {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+      .boxes {
+        display: flex;
+        gap: 100px;
+      }
+      .posts .post {
+        max-width: 500px;
+        width: 100%;
+      }
+      .post h2 {
         padding: 10px 0;
-        }
-        .post p{
-            line-height: 25px;
-        }
-
+      }
+      .post p {
+        line-height: 25px;
+      }
+      .submit {
+        width: 100%;
+        height: 60px;
+        background-color: aqua;
+        padding: 6px;
+        border: none;
+        border-radius: 3px;
+        margin: 10px 0;
+        font-size: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h3 class="currentuser"></h3>
-    <div class="container"> 
-        <div class="create-post">
-            <form>
-                <h2>Create a new post</h2>
-                <input type="text" class="image-url" placeholder="Image Url"> 
-                <input type="text" name="title" placeholder="Title"> 
-                <textarea class="txtarea" cols="30" rows="10" placeholder="Article..."></textarea>
-            </form>
+    <div class="container">
+      <div class="create-post">
+        <form>
+          <h2>Create a new post</h2>
+          <input type="url" class="image-url" placeholder="Image Url" />
+          <input type="text" name="titleinput" class="titleinput" placeholder="Title" />
+          <textarea
+            class="txtarea"
+            cols="30"
+            rows="10"
+            placeholder="Article..."
+          ></textarea>
+          <button class="submit" type="submit">Post</button>
+        </form>
+      </div>
+
+      <div class="posts">
+        <h2 class="h2p">Posts</h2>
+        <div class="boxes">
+       
+
+       
         </div>
-
-        <div class="posts">
-            <h2 class="h2p">Posts</h2>
-            <div class="boxes">
-                <div class="post">
-                    <img src="image.jpg" alt="" />
-                    <h2>React Master</h2>
-                    <p>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
-                      molestiae? Debitis nihil eaque excepturi laborum pariatur totam
-                      ratione, accusamus deserunt. Quod, saepe iure, neque quas at
-                      delectus est rem cumque ea, aspernatur totam non. Fugiat deserunt
-                      voluptas quos nihil adipisci ullam debitis doloremque rem, labore,
-                      itaque corrupti repellendus, provident eum.
-                    </p>
-                  </div>
-          
-                  <div class="post">
-                      <img src="image.jpg" alt="" />
-                      <h2>React Master</h2>
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
-                        molestiae? Debitis nihil eaque excepturi laborum pariatur totam
-                        ratione, accusamus deserunt. Quod, saepe iure, neque quas at
-                        delectus est rem cumque ea, aspernatur totam non. Fugiat deserunt
-                        voluptas quos nihil adipisci ullam debitis doloremque rem, labore,
-                        itaque corrupti repellendus, provident eum.
-                      </p>
-                    </div>
-
-            </div>
-           
-          </div>
-
+      </div>
     </div>
-    
+
     <script>
-        const currentuser=document.querySelector(".currentuser")
-              let data = [];
-        data= ( localStorage.getItem("currentUser"))?(localStorage.getItem("currentUser")) :[]
-        currentuser.innerHTML = `welcome ${data}`
+   const submit = document.querySelector(".submit");
+      const imagepost = document.querySelector("img");
+      const title = document.querySelector(".title");
+      const boxes = document.querySelector(".boxes");
+
+      const imageurl = document.querySelector(".image-url");
+      const titleinput = document.querySelector(".titleinput");
+      const textarea = document.querySelector(".txtarea");
+       document.addEventListener("DOMContentLoaded",()=>{
+        getdatafromlocalstorage()
+     
+       })
+
+       const getdatafromlocalstorage = () =>{
+            let getdata = [];
+            getdata = JSON.parse(localStorage.getItem("postdata"))
+            ? JSON.parse(localStorage.getItem("postdata"))
+            : [];
+
+     
+            boxes.innerHTML=''
+         getdata.forEach(element => {
+          boxes.innerHTML += `
+          <div class="post">
+            <img src="${element.image}" alt="" />
+            <h2 class="title">${element.title}</h2>
+            <p class="description">
+            ${element.textarea}
+            </p>
+          </div>
+          
+          `
+      
+
+            
+         });
 
 
+        }
+
+      const currentuser = document.querySelector(".currentuser");
+      let data = [];
+      data = localStorage.getItem("currentUser")
+        ? localStorage.getItem("currentUser")
+        : [];
+      currentuser.innerHTML = `welcome ${data}`;
+
+   
+
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (
+          imageurl.value == "" ||
+          titleinput.value == "" ||
+          textarea.value == ""
+        ) {
+          alert("please enter full information");
+        } else {
+          let post = {
+            image: imageurl.value,
+            title: titleinput.value,
+            textarea: textarea.value,
+          };
+
+          let setdata = [];
+          setdata = JSON.parse(localStorage.getItem("postdata"))
+            ? JSON.parse(localStorage.getItem("postdata"))
+            : [];
+            setdata.push(post)
+            localStorage.setItem("postdata",JSON.stringify(setdata))
+        //     imageurl.value == "" 
+        //   titleinput.value == "" 
+        //   textarea.value == ""
+        getdatafromlocalstorage()
+      
+
+
+
+
+
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
