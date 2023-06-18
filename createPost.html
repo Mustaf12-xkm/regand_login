@@ -14,7 +14,7 @@
       }
       .container {
         width: 100%;
-
+padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,11 +22,14 @@
         font-family: "Poppins", sans-serif;
       }
       .create-post {
+        max-width: 600px;
+        width: 100%;
         background-color: rgb(247, 251, 251);
-        padding: 10px;
+        /* padding: 10px; */
         box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.75);
+     padding: 20px;
       }
       form {
         display: flex;
@@ -34,7 +37,7 @@
         gap: 20px;
 
         padding: 10px;
-        width: 500px;
+     
       }
       input,
       textarea {
@@ -52,15 +55,15 @@
         padding: 20px 0;
       }
       .posts .boxes .post img {
-        height: 300px;
+        height: 200px;
         width: 100%;
         object-fit: cover;
         background-color: blue;
+        border-radius: 5px;
       }
       .posts {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+      max-width: 700px;
+      width: 100%;
         /* background: red; */
       }
       .posts .h2p {
@@ -69,18 +72,28 @@
         font-size: 30px;
       }
       .boxes {
-        display: flex;
-        gap: 100px;
+
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(150px, auto) );
+        gap: 20px;
       }
       .posts .post {
-        max-width: 500px;
-        width: 100%;
+        /* max-width: 500px;
+        width: 100%; */
+        padding: 3px;
+        border-radius: 5px;
+ 
+        box-shadow: 0px 0px 5px 2px rgba(214,205,205,0.75);
+-webkit-box-shadow: 0px 0px 5px 2px rgba(214,205,205,0.75);
+-moz-box-shadow: 0px 0px 5px 2px rgba(214,205,205,0.75);
       }
       .post h2 {
         padding: 10px 0;
+        word-wrap: break-word;
       }
       .post p {
         line-height: 25px;
+        word-wrap: break-word;
       }
       .submit {
         width: 100%;
