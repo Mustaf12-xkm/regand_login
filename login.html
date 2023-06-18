@@ -82,7 +82,7 @@
             placeholder="Enter your password"
           />
           <button class="submit" type="submit">Submit</button>
-          <p>I don't have an account <span>sign UP</span></p>
+          <p>I don't have an account <span class="span" >sign up</span></p>
         </form>
       </div>
     </div>
@@ -91,7 +91,7 @@
       const email = document.querySelector(".email");
       const password = document.querySelector(".password");
       const submitbtn = document.querySelector(".submit");
-
+      const span = document.querySelector(".span");
       submitbtn.addEventListener("click", function (e) {
         e.preventDefault()
         if (email.value == "" || password.value == "") {
@@ -121,6 +121,10 @@
 
       
         }
+      });
+      span.addEventListener("click",()=>{
+        window.location.href='registration.html'
+
       });
     </script>
   </body>

@@ -97,7 +97,7 @@
             placeholder="confirm password"
           />
           <button class="submit" type="submit">Submit</button>
-          <p>I have an account <span>sign in</span></p>
+          <p>I have an account <span class="span" >sign in</span></p>
         </form>
       </div>
     </div>
@@ -105,6 +105,7 @@
       const submitbtn = document.querySelector(".submit");
 
       const fullname = document.querySelector(".fullname");
+      const span = document.querySelector(".span");
       const email = document.querySelector(".email");
       const password = document.querySelector(".password");
       const confirmpassword = document.querySelector(".confirm-password");
@@ -148,18 +149,16 @@
         
          
         }
-// let name ="axmad"
-//      let d= name=="axmad"
-
-
-//      if(name=="axmad)
 
 
 
       });
 
 
+      span.addEventListener("click",()=>{
+        window.location.href='login.html'
 
+      });
     </script>
   </body>
 </html
